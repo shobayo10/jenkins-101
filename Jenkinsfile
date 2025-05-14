@@ -1,18 +1,18 @@
 pipeline {
-    agent { 
+    agent {
         node {
             label 'docker-agent-python-new'
-            }
-      }
+        }
+    }
     triggers {
-	pollSCM '*/3 * * * *
+        pollSCM('*/3 * * * *')
     }
     stages {
         stage('Build') {
             steps {
                 echo "Building.."
                 sh '''
-                echo "doing build stuff.."
+                    echo "doing build stuff.."
                 '''
             }
         }
@@ -20,17 +20,18 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
-                echo "doing test stuff..
-                '''"
+                    echo "doing test stuff.."
+                '''
             }
         }
         stage('Deliver') {
             steps {
                 echo 'Deploy....'
                 sh '''
-                echo "deploying software.."
+                    echo "deploying software.."
                 '''
             }
         }
     }
 }
+
