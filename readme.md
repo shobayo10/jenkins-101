@@ -1,14 +1,10 @@
 
-## YouTube Link
-For the full 1 hour course watch on youtube:
-https://www.youtube.com/watch?v=6YZvp2GwT0A
-
 # Installation
 ## Build the Jenkins BlueOcean Docker Image (or pull and use the one I built)
 ```
 docker build -t myjenkins-blueocean:2.414.2 .
 
-#IF you are having problems building the image yourself, you can pull from my registry (It is version 2.332.3-1 though, the original from the video)
+#IF you are having problems building the image yourself, you can pull from my registry (It is version 2.332.3-1)
 
 docker pull devopsjourney1/jenkins-blueocean:2.332.3-1 && docker tag devopsjourney1/jenkins-blueocean:2.332.3-1 myjenkins-blueocean:2.332.3-1
 ```
@@ -63,7 +59,7 @@ docker run -d --restart=always -p 127.0.0.1:2376:2375 --network jenkins -v /var/
 docker inspect <container_id> | grep IPAddress
 ```
 
-## Using my Jenkins Python Agent
+## Using my Jenkins Python Agent (java and python) images to created docker agents to perform Build jobs in jenkin
 ```
-docker pull devopsjourney1/myjenkinsagents:python
+docker pull adeolu2023/my-python-image:v2
 ```
